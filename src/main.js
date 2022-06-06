@@ -3,7 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import MetamaskPlugin from './plugins/metamask'
+
 Vue.config.productionTip = false
+
+Vue.use(MetamaskPlugin)
 
 new Vue({
   router,
