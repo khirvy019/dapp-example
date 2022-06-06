@@ -28,10 +28,10 @@
         </div>
         <hr/>
         <div>
-          Tx: <small>{{ numberUpdate.hash }}</small>
+          <small>Tx: {{ numberUpdate.hash }}</small>
         </div>
         <div>
-          Block#: <small>{{ numberUpdate.hash }}</small>
+          <small>Block#: {{ numberUpdate.blockNumber }}</small>
         </div>
       </div>
     </div>
