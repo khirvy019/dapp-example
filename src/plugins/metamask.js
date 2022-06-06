@@ -10,7 +10,7 @@ class MetamaskConnector {
 
   get provider() {
     if (this._provider instanceof ethers.providers.BaseProvider) return this._provider
-    return undefined
+    return this._default_provider
   }
 
   set provider(newProvider) {
