@@ -1,14 +1,19 @@
 <template>
   <div class="container">
     <p>Balance: {{ balance }} ETH</p>
+    <TokensList/>
   </div>
 </template>
 
 <script>
 import { utils, BigNumber } from 'ethers'
+import TokensList from '../components/TokensList.vue'
 
 export default {
   name: 'HomeView',
+  components: {
+    TokensList,
+  },
   data() {
     return {
       balance: 0,
