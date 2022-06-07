@@ -16,7 +16,7 @@ pragma solidity >=0.7.0 <0.9.0;
  * @custom:dev-run-script ./scripts/deploy_with_ethers.ts
  */
 contract Storage {
-    event NumberUpdate(uint256 from, uint256 to, address updatedBy);
+    event NumberUpdate(address indexed updatedBy, uint256 from, uint256 to);
     uint256 number;
 
     /**
@@ -26,7 +26,7 @@ contract Storage {
     function store(uint256 num) public {
         uint256 _previous = number;
         number = num;
-        emit NumberUpdate(_previous, number, msg.sender);
+        emit NumberUpdate(msg.sender, _previous, number);
     }
 
     /**
