@@ -22,6 +22,11 @@ const routes = [
     path: '/storage',
     name: 'storage',
     component: () => import('../views/StorageContractView.vue')
+  },
+  {
+    path: '/swap',
+    name: 'swap',
+    component: () => import('../views/SwapView.vue')
   }
 ]
 
