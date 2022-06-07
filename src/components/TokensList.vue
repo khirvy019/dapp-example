@@ -1,6 +1,10 @@
 <template>
   <div>
     <h4>ERC20 Tokens</h4>
+    <div class="actions-section">
+      <button v-on:click="loadTokenInfo()">Refresh tokens list</button>
+      <button v-on:click="updateBalances()">Refresh balances</button>
+    </div>
     <div
       v-for="(tokenInfo, index) in tokensInfo"
       :key="index"
@@ -26,6 +30,7 @@ export default {
   },
   methods: {
     async loadTokenInfo() {
+      const tokensInfo = []
       for(var i = 0; i < tokenContracts.length; i++) {
         const tokenContract = tokenContracts[i]
         const contract = tokenContract.connect(this.$metamask.provider)
@@ -37,8 +42,9 @@ export default {
           balance: 0,
         }
 
-        this.tokensInfo.push(tokenInfo)
+        tokensInfo.push(tokenInfo)
       }
+      this.tokensInfo = tokensInfo
 
       this.updateBalances()
     },
@@ -68,5 +74,10 @@ export default {
 
 h5, h4 {
   margin: 5px 0px;
+}
+
+.actions-section {
+  display: flex;
+  gap: 5px;
 }
 </style>
