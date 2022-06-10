@@ -7,6 +7,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/storage">Storage</router-link> |
+      <router-link to="/crypto-monkeys">CryptoMonkey</router-link> |
       <router-link :to="{ name: 'swap' }">Swap</router-link>
     </div>
     <div style="margin-left:5px;">

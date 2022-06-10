@@ -1,10 +1,13 @@
 import { ethers } from 'ethers'
 import storageAbi from './abi/storage.json'
+import cryptoMonkeyAbi from './abi/crypto-monkey.json'
 import erc20Abi from './abi/erc20.json'
 import swapContractAbi from './abi/swap-contract.json'
 
 
 export const storageContract = new ethers.Contract('0xFa77D1D8AADDd9a263C7d685375EF148E268c558', storageAbi)
+
+export const cryptoMonkey = new ethers.Contract('0xFa77D1D8AADDd9a263C7d685375EF148E268c558', cryptoMonkeyAbi)
 
 export function createErc20Contract(address) {
   return new ethers.Contract(address, erc20Abi)

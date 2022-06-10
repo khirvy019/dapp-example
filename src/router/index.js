@@ -24,6 +24,11 @@ const routes = [
     component: () => import('../views/StorageContractView.vue')
   },
   {
+    path: '/crypto-monkeys',
+    name: 'crypt-monkeys',
+    component: () => import('../views/CryptoMonkeyView.vue')
+  },
+  {
     path: '/swap',
     name: 'swap',
     component: () => import('../views/SwapView.vue')
